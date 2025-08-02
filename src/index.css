@@ -9,9 +9,9 @@
 /* src/styles/Dashboard.css */
 .dashboard-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    gap: 1.5rem !important;
-    padding: 1rem !important;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    padding: 1.5rem 1rem 0;
 }
 
 .dashboard-grid>div {
@@ -52,6 +52,7 @@
 }
 
 .repo-form {
+    text-transform: uppercase;
     display: flex;
     flex-direction: row;
     gap: 0.75rem;
@@ -211,9 +212,7 @@
         padding: 1rem 0.5rem;
     }
 
-    .chart-card {
-        /* max-width: 400px; */
-    }
+
 }
 
 .dashboard-card {
@@ -243,4 +242,46 @@
     font-weight: 600;
     color: #e0e0e0;
     font-weight: normal;
+}
+
+.error-message span {
+    margin-top: 1px;
+}
+
+.error-message {
+    text-align: left;
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: start;
+    background-color: #2a2a2a;
+    color: #ff4d4f;
+    border: 1px solid #ff4d4f;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    font-family: 'General Sans', sans-serif;
+    text-transform: uppercase;
+    margin-top: 10px;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.error-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

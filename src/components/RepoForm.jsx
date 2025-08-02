@@ -12,7 +12,7 @@ export default function RepoForm({ onSubmit }) {
     const [owner, name] = input.split('/');
 
     if (!owner || !name) {
-      setError('⚠️ Format must be owner/repo (e.g. vercel/next.js)');
+      setError(' Invalid input — use owner/repo format');
       return;
     }
 
@@ -21,23 +21,41 @@ export default function RepoForm({ onSubmit }) {
   };
 
   return (
-    <>
-      <div className="form-card">
+    <div className="form-card">
+      <h1>GitHub Repository Analyzer</h1>
+      <form onSubmit={handleSubmit} className="repo-form">
+        <input
+          value={repo}
+          onChange={(e) => {
+            setRepo(e.target.value);
+            setError('');
+          }}
+          placeholder="Enter repo (e.g. vercel/next.js)"
+        />
+        <button type="submit">Analyze</button>
 
-        <h1>GitHub Repository Analyzer</h1>
-        <form onSubmit={handleSubmit} className="repo-form ">
-          <input
-            value={repo}
-            onChange={(e) => {
-              setRepo(e.target.value);
-              setError('');
-            }}
-            placeholder="Enter repo (e.g. vercel/next.js)"
-          />
-          <button type="submit">Analyze</button>
-          {error && <p className="error-message">{error}</p>}
-        </form>
-      </div >
-    </>
+        {/* ✅ Styled Error Message */}
+        {error && (
+          <div className="error-message">
+            <svg
+              className="error-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M12 9v2m0 4h.01m-.01-10a9 9 0 110 18 9 9 0 010-18z"
+              />
+            </svg>
+            <span>{error}</span>
+          </div>
+
+        )}
+      </form>
+    </div>
   );
 }
