@@ -103,10 +103,10 @@ export default function Dashboard({ repo }) {
 
             {/* Charts Section */}
             <div className="dashboard-grid">
-                <CommitsChart data={commits} />
-                <ContributorsChart contributors={contributors} />
-                <LanguagesChart languages={languages} />
-                <StarsGrowthChart />
+                <div><CommitsChart data={commits} /></div>
+                <div><ContributorsChart contributors={contributors} /></div>
+                <div><LanguagesChart languages={languages} /></div>
+                <div><StarsGrowthChart /></div>
             </div>
         </div>
     );

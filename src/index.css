@@ -6,26 +6,24 @@
     box-sizing: border-box;
 }
 
-/* src/styles/Dashboard.css */
+.dashboard-grid>div {
+    min-height: 260px;
+    min-width: 260px;
+}
+
 .dashboard-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 columns */
     gap: 1.5rem;
     padding: 1.5rem 1rem 0;
 }
 
-.dashboard-grid>div {
-    background: linear-gradient(145deg, rgba(20, 20, 30, 0.9), rgba(40, 40, 60, 0.272));
-    border-radius: 12px;
-    padding: 1.5rem !important;
-    backdrop-filter: blur(12px);
-    color: #f1f1f1;
-    transition: transform 0.2s ease, box-shadow 0.3s ease;
-}
-
-.dashboard-grid>div:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+/* On mobile screens: stack charts vertically */
+@media (max-width: 640px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .text-gray-700 {
@@ -116,7 +114,7 @@
     backdrop-filter: blur(0px);
     border: 1px solid rgba(100, 116, 139, 0.4);
     border-radius: 1rem;
-    padding: 0rem;
+    padding: 1rem;
     width: 100%;
     font-family: 'General Sans', sans-serif;
     font-weight: normal !important;
