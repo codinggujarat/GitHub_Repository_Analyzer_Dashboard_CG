@@ -26,7 +26,11 @@ export default function ContributorsChart({ contributors }) {
 
     return (
         <div className="chart-card">
-            <h3>Top Contributors</h3>
+            <div class="dashboard-card">
+
+                <i class='bx bx-group icon'></i>
+                <span class="label">Top Contributors</span>
+            </div>
             <div className="chart-wrapper" style={{ height: '300px' }}>
                 <Bar data={chartData} options={options} />
             </div>

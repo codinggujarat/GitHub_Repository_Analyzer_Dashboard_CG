@@ -31,7 +31,10 @@ export default function CommitsChart({ data }) {
 
     return (
         <div className="chart-card">
-            <h3>Commits Over Time</h3>
+            <div class="dashboard-card">
+                <i class='bx bx-git-commit icon'></i>
+                <span class="label">Commits Over Time</span>
+            </div>
             <div className="chart-wrapper" style={{ height: '300px' }}>
                 <Line data={chartData} options={options} />
             </div>

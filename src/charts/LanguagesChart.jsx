@@ -42,9 +42,12 @@ export default function LanguagesChart({ languages }) {
 
     return (
         <div className="chart-card">
-            <h3 className="text-xl font-semibold text-yellow-400 mb-4 text-center">
-                Language Breakdown
-            </h3>
+            <div class="dashboard-card">
+
+                <i class='bx bx-code-alt icon'></i>
+                <span class="label">Language Breakdown</span>
+            </div>
+
             <div className="chart-wrapper">
                 <Pie data={chartData} options={options} />
             </div>

@@ -21,17 +21,23 @@ export default function RepoForm({ onSubmit }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="repo-form ">
-      <input
-        value={repo}
-        onChange={(e) => {
-          setRepo(e.target.value);
-          setError('');
-        }}
-        placeholder="Enter repo (e.g. vercel/next.js)"
-      />
-      <button type="submit">Analyze</button>
-      {error && <p className="error-message">{error}</p>}
-    </form>
+    <>
+      <div className="form-card">
+
+        <h1>GitHub Repository Analyzer</h1>
+        <form onSubmit={handleSubmit} className="repo-form ">
+          <input
+            value={repo}
+            onChange={(e) => {
+              setRepo(e.target.value);
+              setError('');
+            }}
+            placeholder="Enter repo (e.g. vercel/next.js)"
+          />
+          <button type="submit">Analyze</button>
+          {error && <p className="error-message">{error}</p>}
+        </form>
+      </div >
+    </>
   );
 }

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import RepoForm from './components/RepoForm';
 import Dashboard from './components/Dashboard';
+import DarkVeil from './components/DarkVeil';
 
 function App() {
   const [repo, setRepo] = useState(null);
@@ -8,9 +9,11 @@ function App() {
   return (
     <>
       <div className='page-container'>
-        <h1>📈 GitHub Repository Analyzer</h1>
-        <RepoForm onSubmit={setRepo} />
-        {repo && <Dashboard repo={repo} />}
+        <DarkVeil />
+        <div className='card'>
+          <RepoForm onSubmit={setRepo} />
+          {repo && <Dashboard repo={repo} />}
+        </div>
       </div>
     </>
   );

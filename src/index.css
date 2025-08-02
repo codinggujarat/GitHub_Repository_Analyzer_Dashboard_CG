@@ -1,144 +1,246 @@
-/* Base styles */
-body {
+@import url('https: //api.fontshare.com/v2/css?f[]=general-sans@200,300,400,500,700&f[]=clash-grotesk@200,300,400,700&f[]=chillax@200,400,500,700&f[]=panchang@200,300,400,500,600&f[]=poppins@100,200,300&f[]=quicksand@300,400,500&display=swap');
+
+* {
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #0f172a;
-    /* Deep blue-gray */
-    color: #f1f5f9;
-    /* Light slate */
-    line-height: 1.6;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* src/styles/Dashboard.css */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 1.5rem !important;
+    padding: 1rem !important;
+}
+
+.dashboard-grid>div {
+    background: linear-gradient(145deg, rgba(20, 20, 30, 0.9), rgba(40, 40, 60, 0.272));
+    border-radius: 12px;
+    padding: 1.5rem !important;
+    backdrop-filter: blur(12px);
+    color: #f1f1f1;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.dashboard-grid>div:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.text-gray-700 {
+    color: #aaa;
+    font-size: 1rem;
+    font-family: 'General Sans', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.text-red-500 {
+    color: #f56565;
+    font-size: 1rem;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    font-family: 'General Sans', sans-serif;
+    margin: 2rem 0;
+}
+
+/* src/styles/RepoForm.css */
+.form-card {
     text-align: center;
 }
 
-h1 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    color: #38bdf8;
-}
-
-h2,
-h3 {
-    color: #facc15;
-    margin-bottom: 0.75rem;
-}
-
-/* Container and layout */
-.container,
-.page-container {
-    max-width: 900px;
-    margin: auto;
-    padding: 2rem;
+.repo-form {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background-color: #0f172a;
-    text-align: center;
+    flex-direction: row;
+    gap: 0.75rem;
+    padding: 1.5rem;
+    flex-wrap: wrap;
+    max-width: 500px;
+    margin: 2rem auto;
+    background: rgba(30, 30, 45, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    color: #fff;
 }
 
-/* Form styling */
-form {
-    margin-bottom: 2rem;
+.repo-form input::placeholder {
+    color: #fff;
+    font-family: 'General Sans', sans-serif;
+    text-transform: uppercase;
+    font-weight: light;
 }
 
-input {
-    padding: 0.6rem 1rem;
-    border: 1px solid #334155;
-    border-radius: 4px;
-    background-color: #1e293b;
-    color: #e2e8f0;
-    width: 280px;
-    transition: border-color 0.3s;
+.repo-form input {
+    font-weight: light;
+    padding: 1.2rem;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #444;
+    background-color: #111;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.311);
+    font-family: 'General Sans', sans-serif;
 }
 
-input:focus {
-    border-color: #3b82f6;
-    outline: none;
-}
-
-button {
-    background-color: #3b82f6;
-    color: white;
+.repo-form button {
+    padding: 0.75rem;
+    border-radius: 8px;
+    width: 100%;
     border: none;
-    padding: 0.6rem 1.2rem;
-    margin-left: 0.5rem;
-    border-radius: 4px;
+    font-family: 'General Sans', sans-serif;
+    background-color: #4f46e5;
+    color: white;
     cursor: pointer;
-    transition: background 0.3s;
+
+    text-transform: uppercase;
+    font-weight: light;
+    transition: background 0.2s ease;
 }
 
-button:hover {
-    background-color: #2563eb;
+.repo-form button:hover {
+    background-color: #3730a3;
 }
 
 .error-message {
     color: #f87171;
-    font-size: 0.875rem;
-    margin-top: 0.5rem;
+    font-size: 0.9rem;
 }
 
-/* Grid layout */
-.dashboard-grid {
-    display: grid;
-    gap: 1.5rem;
-    grid-template-columns: repeat(2, 1fr);
-    padding: 2rem;
-}
-
-@media (max-width: 1024px) {
-
-    .dashboard-grid {
-        grid-template-columns: repeat(2, 1fr);
-        padding: 0;
-    }
-}
-
-@media (max-width: 640px) {
-    .chart-card {
-        margin: 0 !important;
-        padding: 0 !important;
-        width: 100ppx !important;
-    }
-
-    .dashboard-grid {
-        grid-template-columns: repeat(1, 1fr);
-        padding: 0;
-        width: 100% !important;
-    }
-}
-
-/* Chart container styles */
-.chart-container {
-    width: 100%;
-    background: #1e293b;
-    border-radius: 8px;
-    padding: 1rem;
-    margin-top: 1rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-/* Chart card styles */
+/* CommitsChart.css */
 .chart-card {
-    background-color: #1e293b;
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.422), rgba(51, 65, 85, 0.221));
+    backdrop-filter: blur(0px);
+    border: 1px solid rgba(100, 116, 139, 0.4);
     border-radius: 1rem;
-    padding: 2rem;
-    margin-top: 1.5rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    color: #f8fafc;
+    padding: 0rem;
     width: 100%;
-    max-width: 500px;
-    height: auto;
+    font-family: 'General Sans', sans-serif;
+    font-weight: normal !important;
+    color: #e2e8f0;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s ease;
 }
 
-
 .chart-card:hover {
-    transform: translateY(-4px);
+    transform: scale(1.01);
+}
+
+.chart-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: #f8fafc;
+    font-family: 'General Sans', sans-serif;
+    font-weight: normal;
 }
 
 .chart-wrapper {
+    position: relative;
     width: 100%;
-    height: 400px;
-    /* You can make this dynamic later if needed */
+    height: 300px;
+}
+
+/* Enhance bar chart hover */
+.chart-card canvas {
+    transition: all 0.3s ease;
+}
+
+/* Bar color hover glow */
+.chart-card canvas:hover {
+    filter: drop-shadow(0 0 6px rgba(167, 139, 250, 0.6));
+}
+
+.chart-card canvas {
+    transition: all 0.3s ease;
+    border-radius: 12px;
+}
+
+.chart-card canvas:hover {
+    filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.4));
+    /* subtle gold glow */
+}
+
+.chart-card h3 {
+    color: #facc15;
+    /* yellow-400 */
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.page-container {
+    width: 100%;
+    height: 100vh
+}
+
+
+/*  */
+
+
+
+
+/* Laptops and up */
+@media (min-width: 1024px) {}
+
+/* Desktops and up */
+@media (min-width: 1280px) {}
+
+/* Tablets and up */
+@media (min-width: 640px) {
+    .repo-form {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.form-card {
+    margin-top: 40px;
+    position: relative;
+}
+
+.form-card h1 {
+    color: #fff;
+    font-family: 'General Sans', sans-serif;
+    font-weight: normal;
+}
+
+@media (max-width: 658px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem 0.5rem;
+    }
+
+    .chart-card {
+        /* max-width: 400px; */
+    }
+}
+
+.dashboard-card {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+    border-radius: 12px;
+    color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    max-width: 320px;
+}
+
+
+.dashboard-card .icon {
+    font-size: 1.5rem;
+    background: #1e1e2f;
+    color: #4fc3f7;
+    padding: 10px;
+}
+
+.dashboard-card .label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #e0e0e0;
+    font-weight: normal;
 }
