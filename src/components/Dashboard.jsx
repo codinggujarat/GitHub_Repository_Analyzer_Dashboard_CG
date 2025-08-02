@@ -65,7 +65,7 @@ export default function Dashboard({ repo }) {
     if (error) return <p className="text-red-500">{error}</p>;
 
     return (
-        <div>
+        <div className='dashboard'>
             {/* Summary Cards */}
             <div className="summary-cards">
                 <div className="card-box">

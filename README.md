@@ -74,7 +74,10 @@ npm start
 │   └── index.css  // Custom dark CSS
 ├── package.json
 └── README.md
+
 ```
+
+![Dashboard Preview](GitHub_Repository_Analyzer_Dashboard_CG.jpeg)
 
 ---
 
