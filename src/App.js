@@ -9,7 +9,8 @@ function App() {
   return (
     <>
       <div className='page-container'>
-        <DarkVeil />
+        <DarkVeil
+        />
         <div className='card'>
           <RepoForm onSubmit={setRepo} />
           {repo && <Dashboard repo={repo} />}
