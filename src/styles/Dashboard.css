@@ -6,15 +6,8 @@
 }
 
 .card-box {
-    background: linear-gradient(145deg, rgba(20, 20, 30, 0.9), rgba(40, 40, 60, 0.272));
-    backdrop-filter: blur(12px);
-    border-radius: 12px;
-    padding: 1.2rem;
-    text-align: center;
-    color: #fff;
-    transition: transform 0.2s ease;
-    background: linear-gradient(135deg, rgba(30, 41, 59, 0.422), rgba(51, 65, 85, 0.221));
-    backdrop-filter: blur(0px);
+    background: linear-gradient(to right, rgba(128, 0, 128, 0.459), rgba(76, 0, 130, 0.459));
+    backdrop-filter: blur(10px);
     border: 1px solid rgba(100, 116, 139, 0.4);
     border-radius: 1rem;
     padding: 1rem;
@@ -34,4 +27,8 @@
     font-size: 1.8rem;
     margin-bottom: 0.5rem;
     color: #4fc3f7;
+}
+
+.card-box p {
+    padding: 10px 5px;
 }

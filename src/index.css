@@ -62,9 +62,8 @@
     flex-wrap: wrap;
     max-width: 400px;
     margin: 2rem auto;
-    background: linear-gradient(135deg, rgba(30, 41, 59, 0.422), rgba(51, 65, 85, 0.221));
-    border: 1px solid rgba(100, 116, 139, 0.4);
-    border-radius: 12px;
+    background: linear-gradient(to right, rgba(76, 0, 130, 0.459), rgba(128, 0, 128, 0.459));
+    backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     color: #fff;
 }
@@ -82,10 +81,10 @@
     padding: 0.9rem;
     width: 100%;
     border-radius: 8px;
-    border: 1px solid #444;
-    background-color: #000;
+    border: 1px solid hwb(0 27% 73%);
+    background: linear-gradient(to right, rgba(76, 0, 130, 0.459), rgba(128, 0, 128, 0.459));
+    backdrop-filter: blur(10px);
     color: #fff;
-    background: rgba(0, 0, 0, 0.311);
     font-family: 'General Sans', sans-serif;
 }
 
@@ -109,6 +108,7 @@
     background-position: right center;
     /* flips the gradient */
 }
+
 .error-message {
     color: #f87171;
     font-size: 0.9rem;
@@ -116,8 +116,8 @@
 
 /* CommitsChart.css */
 .chart-card {
-    background: linear-gradient(135deg, rgba(30, 41, 59, 0.422), rgba(51, 65, 85, 0.221));
-    backdrop-filter: blur(0px);
+    background: linear-gradient(to right, rgba(128, 0, 128, 0.459), rgba(76, 0, 130, 0.459));
+    backdrop-filter: blur(10px);
     border: 1px solid rgba(100, 116, 139, 0.4);
     border-radius: 1rem;
     padding: 1rem;
@@ -236,8 +236,9 @@
 
 .dashboard-card .icon {
     font-size: 1.5rem;
-    background: #1e1e2f;
     color: #4fc3f7;
+    background: linear-gradient(to right, rgba(76, 0, 130, 0.459), rgba(128, 0, 128, 0.459));
+    backdrop-filter: blur(10px);
     padding: 10px;
 }
 
