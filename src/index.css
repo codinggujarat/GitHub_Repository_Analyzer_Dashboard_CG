@@ -1,0 +1,144 @@
+/* Base styles */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0f172a;
+    /* Deep blue-gray */
+    color: #f1f5f9;
+    /* Light slate */
+    line-height: 1.6;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #38bdf8;
+}
+
+h2,
+h3 {
+    color: #facc15;
+    margin-bottom: 0.75rem;
+}
+
+/* Container and layout */
+.container,
+.page-container {
+    max-width: 900px;
+    margin: auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #0f172a;
+    text-align: center;
+}
+
+/* Form styling */
+form {
+    margin-bottom: 2rem;
+}
+
+input {
+    padding: 0.6rem 1rem;
+    border: 1px solid #334155;
+    border-radius: 4px;
+    background-color: #1e293b;
+    color: #e2e8f0;
+    width: 280px;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #3b82f6;
+    outline: none;
+}
+
+button {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    margin-left: 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #2563eb;
+}
+
+.error-message {
+    color: #f87171;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+}
+
+/* Grid layout */
+.dashboard-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2rem;
+}
+
+@media (max-width: 1024px) {
+
+    .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0;
+    }
+}
+
+@media (max-width: 640px) {
+    .chart-card {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100ppx !important;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 0;
+        width: 100% !important;
+    }
+}
+
+/* Chart container styles */
+.chart-container {
+    width: 100%;
+    background: #1e293b;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Chart card styles */
+.chart-card {
+    background-color: #1e293b;
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-top: 1.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    color: #f8fafc;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+
+.chart-card:hover {
+    transform: translateY(-4px);
+}
+
+.chart-wrapper {
+    width: 100%;
+    height: 400px;
+    /* You can make this dynamic later if needed */
+}
