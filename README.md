@@ -20,7 +20,7 @@ A modern, dark-themed dashboard that lets you analyze GitHub repositories using 
 
 ## 🖼️ Preview
 
-![Dashboard Screenshot](./screenshot.png) <!-- Replace with your screenshot path -->
+![Dashboard Screenshot](./GitHub_Repository_Analyzer_Dashboard_CG.png) <!-- Replace with your screenshot path -->
 
 ---
 
@@ -77,7 +77,7 @@ npm start
 
 ```
 
-![Dashboard Preview](GitHub_Repository_Analyzer_Dashboard_CG.jpeg)
+![Dashboard Preview](./GitHub_Repository_Analyzer_Dashboard_CG.png)
 
 ---
 
